@@ -17,25 +17,29 @@ List your aliases
 
 Create a shortcut for a gh command
 
-  -s, --shell   Declare an alias to be passed through a shell interpreter
+ Option | Description
+--- | ---
+ -s, --shell |  Declare an alias to be passed through a shell interpreter
 
 ## `gh api <endpoint> [flags]`
 
 Make an authenticated GitHub API request
 
-      --cache duration        Cache the response, e.g. "3600s", "60m", "1h"
-  -F, --field key=value       Add a typed parameter in key=value format
-  -H, --header key:value      Add a HTTP request header in key:value format
-      --hostname string       The GitHub hostname for the request (default "github.com")
-  -i, --include               Include HTTP response status line and headers in the output
-      --input file            The file to use as body for the HTTP request (use "-" to read from standard input)
-  -q, --jq string             Query to select values from the response using jq syntax
-  -X, --method string         The HTTP method for the request (default "GET")
-      --paginate              Make additional HTTP requests to fetch all pages of results
-  -p, --preview names         GitHub API preview names to request (without the "-preview" suffix)
-  -f, --raw-field key=value   Add a string parameter in key=value format
-      --silent                Do not print the response body
-  -t, --template string       Format JSON output using a Go template; see "gh help formatting"
+ Option | Description
+--- | ---
+--cache duration    |    Cache the response, e.g. "3600s", "60m", "1h"
+-F, --field key=value |      Add a typed parameter in key=value format
+-H, --header key:value   |   Add a HTTP request header in key:value format
+--hostname string   |    The GitHub hostname for the request (default "github.com")
+-i, --include      |         Include HTTP response status line and headers in the output
+--input file     |       The file to use as body for the HTTP request (use "-" to read from standard input)
+-q, --jq string    |         Query to select values from the response using jq syntax
+-X, --method string   |      The HTTP method for the request (default "GET")
+--paginate      |        Make additional HTTP requests to fetch all pages of results
+-p, --preview names    |     GitHub API preview names to request (without the "-preview" suffix)
+-f, --raw-field key=value  | Add a string parameter in key=value format
+--silent           |     Do not print the response body
+-t, --template string    |   Format JSON output using a Go template; see "gh help formatting"
 
 ## `gh auth <command>`
 
@@ -44,55 +48,68 @@ Authenticate gh and git with GitHub
 ### `gh auth login [flags]`
 
 Authenticate with a GitHub host
-
-  -p, --git-protocol string   The protocol to use for git operations: {ssh|https}
-  -h, --hostname string       The hostname of the GitHub instance to authenticate with
-  -s, --scopes strings        Additional authentication scopes to request
-  -w, --web                   Open a browser to authenticate
-      --with-token            Read token from standard input
+ Option | Description
+--- | ---
+-p, --git-protocol string |  The protocol to use for git operations: {ssh|https}
+-h, --hostname string   |    The hostname of the GitHub instance to authenticate with
+-s, --scopes strings    |    Additional authentication scopes to request
+-w, --web             |      Open a browser to authenticate
+--with-token      |      Read token from standard input
 
 ### `gh auth logout [flags]`
 
 Log out of a GitHub host
 
-  -h, --hostname string   The hostname of the GitHub instance to log out of
+ Option | Description
+--- | ---
+-h, --hostname string  | The hostname of the GitHub instance to log out of
 
 ### `gh auth refresh [flags]`
 
 Refresh stored authentication credentials
 
-  -h, --hostname string   The GitHub host to use for authentication
-  -s, --scopes strings    Additional authentication scopes for gh to have
+ Option | Description
+--- | ---
+-h, --hostname string  | The GitHub host to use for authentication
+-s, --scopes strings  |  Additional authentication scopes for gh to have
 
 ### `gh auth setup-git [flags]`
 
 Configure git to use GitHub CLI as a credential helper
 
-  -h, --hostname string   The hostname to configure git for
+ Option | Description
+--- | ---
+h, --hostname string |  The hostname to configure git for
 
 ### `gh auth status [flags]`
 
 View authentication status
 
-  -h, --hostname string   Check a specific hostname's auth status
-  -t, --show-token        Display the auth token
+ Option | Description
+--- | ---
+-h, --hostname string  | Check a specific hostname's auth status
+-t, --show-token   |     Display the auth token
 
 ### `gh auth token [flags]`
 
 Print the auth token gh is configured to use
 
-  -h, --hostname string   The hostname of the GitHub instance authenticated with
+ Option | Description
+--- | ---
+-h, --hostname string  | The hostname of the GitHub instance authenticated with
 
 ## `gh browse [<number> | <path>] [flags]`
 
 Open the repository in the browser
 
-  -b, --branch string   Select another branch by passing in the branch name
-  -c, --commit          Open the last commit
-  -n, --no-browser      Print destination URL instead of opening the browser
-  -p, --projects        Open repository projects
-  -s, --settings        Open repository settings
-  -w, --wiki            Open repository wiki
+ Option | Description
+--- | ---
+-b, --branch string |  Select another branch by passing in the branch name
+-c, --commit     |     Open the last commit
+-n, --no-browser  |    Print destination URL instead of opening the browser
+-p, --projects    |    Open repository projects
+-s, --settings    |    Open repository settings
+-w, --wiki        |    Open repository wiki
 
 ## `gh codespace`
 
@@ -102,77 +119,93 @@ Connect to and manage codespaces
 
 Open a codespace in Visual Studio Code
 
-  -c, --codespace string   Name of the codespace
-      --insiders           Use the insiders version of Visual Studio Code
-  -w, --web                Use the web version of Visual Studio Code
+ Option | Description
+--- | ---
+-c, --codespace string  | Name of the codespace
+--insiders     |      Use the insiders version of Visual Studio Code
+-w, --web          |      Use the web version of Visual Studio Code
 
 ### `gh codespace cp [-e] [-r] [-- [<scp flags>...]] <sources>... <dest>`
 
 Copy files between local and remote file systems
 
-  -c, --codespace string   Name of the codespace
-  -e, --expand             Expand remote file names on remote shell
-  -p, --profile string     Name of the SSH profile to use
-  -r, --recursive          Recursively copy directories
+ Option | Description
+--- | ---
+-c, --codespace string |  Name of the codespace
+-e, --expand           |  Expand remote file names on remote shell
+-p, --profile string   |  Name of the SSH profile to use
+-r, --recursive        |  Recursively copy directories
 
 ### `gh codespace create [flags]`
 
 Create a codespace
 
-  -b, --branch string               repository branch
-      --default-permissions         do not prompt to accept additional permissions requested by the codespace
-      --devcontainer-path string    path to the devcontainer.json file to use when creating codespace
-      --idle-timeout duration       allowed inactivity before codespace is stopped, e.g. "10m", "1h"
-  -l, --location string             location: {EastUs|SouthEastAsia|WestEurope|WestUs2} (determined automatically if not provided)
-  -m, --machine string              hardware specifications for the VM
-  -r, --repo string                 repository name with owner: user/repo
-      --retention-period duration   allowed time after shutting down before the codespace is automatically deleted (maximum 30 days), e.g. "1h", "72h"
-  -s, --status                      show status of post-create command and dotfiles
+ Option | Description
+--- | ---
+-b, --branch string        |       repository branch
+--default-permissions    |     do not prompt to accept additional permissions requested by the codespace
+--devcontainer-path string  |  path to the devcontainer.json file to use when creating codespace
+--idle-timeout duration    |   allowed inactivity before codespace is stopped, e.g. "10m", "1h"
+-l, --location string        |     location: {EastUs|SouthEastAsia|WestEurope|WestUs2} (determined automatically if not provided)
+-m, --machine string    |          hardware specifications for the VM
+-r, --repo string       |          repository name with owner: user/repo
+--retention-period duration  | allowed time after shutting down before the codespace is automatically deleted (maximum 30 days), e.g. "1h", "72h"
+-s, --status                |      show status of post-create command and dotfiles
 
 ### `gh codespace delete [flags]`
 
 Delete codespaces
 
-      --all                Delete all codespaces
-  -c, --codespace string   Name of the codespace
-      --days N             Delete codespaces older than N days
-  -f, --force              Skip confirmation for codespaces that contain unsaved changes
-  -o, --org login          The login handle of the organization (admin-only)
-  -r, --repo repository    Delete codespaces for a repository
-  -u, --user username      The username to delete codespaces for (used with --org)
+ Option | Description
+--- | ---
+--all       |         Delete all codespaces
+-c, --codespace string |  Name of the codespace
+--days N           |  Delete codespaces older than N days
+-f, --force            |  Skip confirmation for codespaces that contain unsaved changes
+-o, --org login        |  The login handle of the organization (admin-only)
+-r, --repo repository  |  Delete codespaces for a repository
+-u, --user username    |  The username to delete codespaces for (used with --org)
 
 ### `gh codespace edit [flags]`
 
 Edit a codespace
 
-  -c, --codespace string      Name of the codespace
-  -d, --display-name string   Set the display name
-  -m, --machine string        Set hardware specifications for the VM
+ Option | Description
+--- | ---
+-c, --codespace string    |  Name of the codespace
+-d, --display-name string |  Set the display name
+-m, --machine string      |  Set hardware specifications for the VM
 
 ### `gh codespace jupyter [flags]`
 
 Open a codespace in JupyterLab
 
-  -c, --codespace string   Name of the codespace
+ Option | Description
+--- | ---
+-c, --codespace string  | Name of the codespace
 
 ### `gh codespace list [flags]`
 
 List codespaces
 
-  -q, --jq expression     Filter JSON output using a jq expression
-      --json fields       Output JSON with the specified fields
-  -L, --limit int         Maximum number of codespaces to list (default 30)
-  -o, --org login         The login handle of the organization to list codespaces for (admin-only)
-  -r, --repo string       Repository name with owner: user/repo
-  -t, --template string   Format JSON output using a Go template; see "gh help formatting"
-  -u, --user username     The username to list codespaces for (used with --org)
+ Option | Description
+--- | ---
+-q, --jq expression  |   Filter JSON output using a jq expression
+--json fields    |   Output JSON with the specified fields
+-L, --limit int    |     Maximum number of codespaces to list (default 30)
+-o, --org login    |     The login handle of the organization to list codespaces for (admin-only)
+-r, --repo string     |  Repository name with owner: user/repo
+-t, --template string |  Format JSON output using a Go template; see "gh help formatting"
+-u, --user username  |   The username to list codespaces for (used with --org)
 
 ### `gh codespace logs [flags]`
 
 Access codespace logs
 
-  -c, --codespace string   Name of the codespace
-  -f, --follow             Tail and follow the logs
+ Option | Description
+--- | ---
+-f, --follow           |  Tail and follow the logs
+-c, --codespace string |  Name of the codespace
 
 ### `gh codespace ports [flags]`
 
