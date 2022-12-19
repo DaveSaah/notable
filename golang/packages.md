@@ -1,0 +1,1 @@
+- When creating modules, function names have to start with a capital letter.
