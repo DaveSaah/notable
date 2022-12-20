@@ -24,3 +24,6 @@
 - Fast build time, start up and run.
 - Requires fewer resources.
 - Compiles into a single binary that is consistent across platforms.
+- It is strongly and statically typed.
+    - Variable type cannot change over time. Variables of int type will always be integers throughout the lifecycle of the program.
+
