@@ -84,6 +84,7 @@ var (
 
 - Variables that begin with lowercase are scoped to the package they are defined in.
 - Variables that begin with uppercase are visible outside the package they are defined in.
+- Use of PascalCase or camelCase.
 
 ## Naming Rules
 
