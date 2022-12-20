@@ -40,13 +40,14 @@ name := "DaveSaah"
 - It can only be used within a function.
 
 
-## Checking Value Type
+# Checking Value Type
 
 ```go
 fmt.Printf("%T\n", age)
 ```
 
 - `%T` is a verb that gets the type of a value.
+
 
 # Note
 
@@ -78,3 +79,29 @@ var (
 
 - `var` blocks can be used to declare related variables together.
 
+
+# Naming Conventions
+
+- Variables that begin with lowercase are scoped to the package they are defined in.
+- Variables that begin with uppercase are visible outside the package they are defined in.
+
+## Naming Rules
+
+- The length of a variable name should reflect the life of the variable.
+- Keep varibles that represent acroynms as all uppercase. E.g. `theURL`.
+
+
+# Variable Scopes
+
+- Package scope: Accessible within the same package.
+- Global scope: Accessible globally.
+- Block scope: Accessible within a block. (Mostly a function. i.e local variables)
+
+
+# Variable Type Conversion
+
+- Variables can be converted from one type to another by using the type names as functions. E.g. float32(12) converts 12 into a float32 number. (a variable name can be used in place of 12)
+- Using `string` to convert a number into a string will give you the unicode representation of that number instead of the value as a string.
+    - To deal with that, you need to import `strconv` package.
+
+> `strconv` package deals with string conversion into various data types. Refer to docs for more info. 
