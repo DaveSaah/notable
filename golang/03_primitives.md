@@ -27,3 +27,5 @@ var isWhat bool         // gives `false`
 - bytes represents UTF-8 characters.
 - A rune represents UTF-32 characters.
 - runes are type alias for `int32`.
+
+- You cannot mix types even in the same family when performing operations.
