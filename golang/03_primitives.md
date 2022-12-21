@@ -36,3 +36,8 @@ var isWhat bool         // gives `false`
 - When an operation involves two integers, the result will be an integer. In a division operation for instance, the result will only be the integer part of the answer.
     - To avoid data loss, operations that may result into floats should have its operands in the `float32` or `float64` data type.
 - Floats have a special notation for exponents. Sample: `2.1e4`, `2E19`, `2.1e-3`, ...
+- To get the complex and imaginary parts of a complex number separately:
+```go
+var comp complex64 = 1 + 10i
+realPart, imaginaryPart = real(comp), imag(comp)
+```
