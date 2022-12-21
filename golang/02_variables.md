@@ -29,7 +29,7 @@ var name string = "DaveSaah"
 const pi = 3.14
 ```
 
-- Observation: Defining a const variable without using it does not throw an er    ror.
+- Observation: Defining a const variable without using it does not throw an error.
 
 ## Shorthand Method
 
