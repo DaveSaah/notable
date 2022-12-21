@@ -102,7 +102,7 @@ var (
 # Variable Type Conversion
 
 - Variables can be converted from one type to another by using the type names as functions. E.g. float32(12) converts 12 into a float32 number. (a variable name can be used in place of 12)
-- Using `string` to convert a number into a string will give you the unicode representation of that number instead of the value as a string.
+- Using the `string()` function to convert a number into a string will give you the unicode representation of that number instead of the value as a string.
     - To deal with that, you need to import `strconv` package.
 
 > `strconv` package deals with string conversion into various data types. Refer to docs for more info. 
