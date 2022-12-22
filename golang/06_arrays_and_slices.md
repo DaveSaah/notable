@@ -15,7 +15,7 @@ grades := [3]int{98, 99, 97}
 - An array can only store one type of data.
 - Data type of an array must be specified when defining an array.
 
-If you are going to initialise values in when declaring an array, you do not need to explicitly state the size; you can use the followin syntax example:
+If you are going to initialise values in when declaring an array, you do not need to explicitly state the size; you can use the following syntax example:
 
 ```go
 grades := [...]int{98, 99, 87, 85, 86}
