@@ -30,7 +30,7 @@ array_name[index] = value
 ## Note
 - The length of the array is found using the `len` function.
 
-Copying arrays in Go, will create an entirely new set of array. (This could potentially slow down your program).
+Copying arrays in Go will create an entirely new set of arrays. (This could potentially slow down your program).
 
 ```go
 a := [...]int{1, 2, 3}
