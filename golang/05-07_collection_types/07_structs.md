@@ -1,9 +1,12 @@
-# What are they?
+# Structs
 
-- It gathers information together that are related to one concept.
+## What are they?
+
+- It is a collection of different data types that describe a single concept.
 - There are no constraints on the type of data that can be stored inside a `struct`.
 
-# Creating a Struct
+## Creating a Struct
+
 ```go
 // Syntax
 type variable_name struct {
@@ -18,7 +21,7 @@ type person struct {
 }
 ```
 
-# Using a Struct
+## Using a Struct
 
 ```go
 // example
@@ -32,9 +35,12 @@ person1 := person {
         "Python",
     },
 }
+```
+
+### Positional Declaration For Structs Usage
 
 - Another way to instantiate a struct is to use the positional syntax.
-    - The values in the struct are declared in the same order it was defined. (Think of the differences as keyless arguments of a function vs keyword arguements)
+- The values in the struct are declared in the same order it was defined.
 
 ```go
 // Example
@@ -48,8 +54,9 @@ person2 := person {
     }
 }
 ```
+> It is recommended to use field names when creating struct objects to prevent semantic bugs in the future.
 
-# Getting Values From a Struct
+## Getting Values From a Struct
 
 - Dot (.) syntax is used to get the corresponding fields inside a struct.
 
@@ -60,11 +67,49 @@ variable_name.field_name
 // Example
 fmt.Println(person1.name)   // returns the name of person1
 ```
+### Advantages of Using Keywords in Creating Struct Objects
 
-# Naming Conventions
+- If a defined struct field is not given a value when a struct object is created, there is no error and it given a zero value.
+
+```go
+// example
+type versionControl struct {
+    name string
+    age int
+    family []string
+}
+
+// Creating an object
+var github = versionControl {
+    name: "Github",
+    age: 200,
+}
+
+fmt.Println(versionControl.family)  // prints []
+```
+- It makes room for changing struct content without having to change its usage. This makes the program robust and change proof.
+
+### When To Use Positional Declaration for Structs Usage
+
+- When creating an anonymous struct.
+- When a struct has a short lifespan.
+
+## Naming Conventions
 
 - Variable naming conventions still holds for structs.
 
-# Anonymous Struct
+## Note
 
-- 
+- As opposed to `maps`, `structs` are value data types. This means when a struct is assigned to a variable, it points to a different location in memory. A change in the new struct does not affect the old.
+
+> Unlike `maps` and `slices`,`structs` refer to independent data.
+
+- To point to the same memory address of a `struct`, use the address operator, `&`.
+
+```go
+var mainStruct = struct{name string}{name: "DaveSaah"}
+var copyStruct = &mainStruct
+
+// Changing the data in `copyStruct` affects `mainStruct`
+```
+
