@@ -77,7 +77,7 @@ It is special-purpose if-statement where there are many if-else's involved.
 
 ```go
 // Simple
-switch value {
+switch tag {
     case val1:
         // code
     case val2:
@@ -87,7 +87,7 @@ switch value {
 }
 
 // multiple test values
-switch value {
+switch tag {
     case val1, val2:
         // code
     case val3, val4, val5:
@@ -97,11 +97,11 @@ switch value {
 }
 
 // initialiser syntax
-switch variable := expression; variable {
+switch tag := expression; tag {
     // code
 }
 
-// test cases as boolean expression
+// test cases as boolean expression; tagless syntax
 switch {
     case boolean_expression:
         // code
@@ -112,7 +112,7 @@ switch {
 ## Fallthrough
 
 - The `fallthrough` keyword is used when you want to run the test case after the valid one has passed.
-- `fallthrough` is logicless. If the next test case is false, the code block still executes.
+- `fallthrough` is logicless. This means that if the next test case is false, the code block still execute.
 
 ```go
 // example
@@ -127,6 +127,7 @@ switch {
 ## Type Switches
 
 - It is used to check the type of a value.
+- The type `interface` can take any data type available in Go as a value.
 
 ```go
 // sample
@@ -143,9 +144,11 @@ switch i.(type) {
         fmt.Println("This is another type")
 }
 ```
+
 ## Notes
 
 - A `tag` is value that is tested by cases in a `switch` statement.
 - A `break` keyword is implied in switch statements in `Go`.
-- Array types are very different from any other arrays. They have to have the same data type or size for them to be considered equal.
+- Array types are very different from any other arrays. They have to have the same data type and size for them to be considered equal.
 - `break` keyword can be used to exit the execution of a case block early. This is useful if you're running a logical test within the block.
+- The delimiter for switch statement blocks are the keywords: `case` and `default`.
