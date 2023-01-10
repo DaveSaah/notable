@@ -109,3 +109,4 @@ j = j++     // results in an error
 
 - Go has `continue` keyword.
 - Go has nested loops.
+- The `break` statement breaks out of a loop while a `continue` statement break out of the currrent iteration of a loop without exiting the main loop.
