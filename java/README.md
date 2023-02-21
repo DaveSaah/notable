@@ -2,4 +2,5 @@
 
 ## Table of Contents
 
-- 
+- [The Basics](./Basics.md)
+
