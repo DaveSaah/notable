@@ -6,7 +6,7 @@
 ## SYNTAX
 
 ```go
-func (known-context) method-name() {
+func (known_context) method_name() return_types {
     // some code
 }
 ```
